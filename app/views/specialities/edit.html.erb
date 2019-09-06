@@ -1,0 +1,8 @@
+<h1><%= @speciality.speciality%></h1>
+
+<%= form_for @speciality do |f|%>
+  <%= f.label :speciality %>
+  <%= f.text_field :speciality %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,18 @@
+<h1>Doctors</h1>
+
+<%-# add a test to check is tenure is bigger than 1 year to change years to year -%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tenure</th>
+    <th>Speciality</th>
+  </tr>
+  <% @doctors.each do |doctor| %>
+    <tr>
+      <td><%= link_to doctor.name, edit_doctor_path(doctor) %></td>
+      <td><%= doctor.tenure%> years</td>
+      <td><%= doctor.speciality.speciality%> </td>
+      <td><%= link_to "Delete Doctor", [doctor], method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,13 @@
+<h1><%= @doctor.name %></h1>
+
+<%= form_for @doctor do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+
+  <%= f.label :tenure %>
+  <%= f.number_field :tenure%>
+
+  <%= f.collection_select :speciality_id, @specialities.order('id ASC'), :id, :speciality %>
+
+  <%= f.submit%>
+<% end %>
