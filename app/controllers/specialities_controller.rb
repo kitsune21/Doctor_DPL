@@ -8,6 +8,16 @@ class SpecialitiesController < ApplicationController
   end
 
   def new
+    @speciality = Speciality.new
+  end
+
+  def create
+    @speciality = Speciality.new(speciality_params)
+    if @speciality.save
+      redirect_to specialities_path
+    else
+      render :new
+    end
   end
 
   def edit

@@ -1,2 +1,9 @@
-<h1>Specialities#new</h1>
-<p>Find me in app/views/specialities/new.html.erb</p>
+<h1>Add A Speciality</h1>
+
+
+<%= form_for @speciality do |f|%>
+  <%= f.label :speciality %>
+  <%= f.text_field :speciality %>
+
+  <%= f.submit %>
+<% end %>

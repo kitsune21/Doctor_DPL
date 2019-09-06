@@ -1,2 +1,13 @@
-<h1>Doctors#new</h1>
-<p>Find me in app/views/doctors/new.html.erb</p>
+<h1>Add A Doctor</h1>
+
+<%= form_for @doctor do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+
+  <%= f.label :tenure %>
+  <%= f.number_field :tenure%>
+
+  <%= f.collection_select :speciality_id, @specialities.order('id ASC'), :id, :speciality %>
+
+  <%= f.submit%>
+<% end %>

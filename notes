@@ -1,3 +1,9 @@
+Things I need to add:
+-Appointments controller
+-Appointments views
+-Appointments routes
+
+
 Things I want to add:
 -A check on the doctors view to show years/year depending on if the tenure is greater than one year
 -Be able to filter the patients by name
