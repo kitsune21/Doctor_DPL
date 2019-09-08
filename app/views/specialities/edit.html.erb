@@ -1,5 +1,7 @@
 <h1><%= @speciality.speciality%></h1>
 
+<%= link_to "Cancel", specialities_path%>
+
 <%= form_for @speciality do |f|%>
   <%= f.label :speciality %>
   <%= f.text_field :speciality %>

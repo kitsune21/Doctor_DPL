@@ -1,2 +1,19 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+<h1>New Appointment</h1>
+
+<%= link_to "Cancel", appointments_path%>
+<p>Returning or new patient?</p>
+<% Patient.all.each do |p| %>
+  <p><%= p.name %></p>
+<% end %>
+
+<%= form_for @appointment do |f| %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
+
+  <%= f.label :time %>
+  <%= f.datetime_local_field :time %>
+
+  <%= f.collection_select :doctor_id, Doctor.all, :id, :name %>
+
+  <%= f.submit%>
+<% end %>

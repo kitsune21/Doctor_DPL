@@ -1,5 +1,7 @@
 <h1><%= @doctor.name %></h1>
 
+<%= link_to "Cancel", doctors_path%>
+
 <%= form_for @doctor do |f| %>
   <%= f.label :name%>
   <%= f.text_field :name%>

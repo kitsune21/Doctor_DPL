@@ -1,5 +1,7 @@
 <h1>All Appointments</h1>
 
+<%= link_to "New Appointment", new_appointment_path%>
+
 <table>
   <tr>
     <th>Patient</th>
@@ -15,6 +17,7 @@
     <td><%= appointment.doctor.speciality.speciality%></td>
     <td><%= appointment.time.strftime("%H:%M") %></td>
     <td><%= appointment.comment %></td>
+    <td><%= link_to "Edit", edit_appointment_path(appointment) %></td>
   <tr>
   <% end %>
 </table>

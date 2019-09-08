@@ -1,2 +1,15 @@
-<h1>Appointments#edit</h1>
-<p>Find me in app/views/appointments/edit.html.erb</p>
+<h1>Appointment For: <%= @appointment.patient.name %></h1>
+
+<%= link_to "Cancel", appointments_path%>
+
+<%= form_for @appointment do |f| %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
+
+  <%= f.label :time %>
+  <%= f.datetime_local_field :time %>
+
+  <%= f.collection_select :doctor_id, Doctor.all, :id, :name %>
+
+  <%= f.submit%>
+<% end %>
