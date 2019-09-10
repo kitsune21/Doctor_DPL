@@ -1,12 +1,10 @@
 <h1>New Appointment</h1>
 
 <%= link_to "Cancel", appointments_path%>
-<p>Returning or new patient?</p>
-<% Patient.all.each do |p| %>
-  <p><%= p.name %></p>
-<% end %>
 
 <%= form_for @appointment do |f| %>
+  <%= f.collection_select :patient_id, Patient.all.order('id DESC'), :id, :name%>
+
   <%= f.label :comment %>
   <%= f.text_area :comment %>
 
