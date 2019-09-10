@@ -4,12 +4,15 @@
 <%= link_to "Add A Doctor", new_doctor_path %>
 
 <%-# add a test to check is tenure is bigger than 1 year to change years to year -%>
-<table>
+<table class='hover'>
+  <thead>
   <tr>
     <th>Name</th>
     <th>Tenure</th>
     <th>Speciality</th>
   </tr>
+  </thead>
+  <tbody>
   <% @doctors.each do |doctor| %>
     <tr>
       <td><%= link_to doctor.name, edit_doctor_path(doctor) %></td>
@@ -18,4 +21,5 @@
       <td><%= link_to "Delete Doctor", [doctor], method: :delete %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
