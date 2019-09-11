@@ -1,4 +1,20 @@
 <h4><%= @patient.name %>'s Appointments</h4>
-<% @appointments.each do |appointment| %>
-  <p><%= appointment.comment %></p>
-<% end %>
+<table class='hover'>
+  <thead>
+    <tr>
+      <td>Date</td>
+      <td>Time</td>
+      <td>Comment</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appointments.each do |appointment| %>
+    <tr>
+      <td><%= appointment.time.strftime('%F') %></td>
+      <td><%= appointment.time.strftime('%H:%M') %></td>
+      <td><%= appointment.comment %></td>
+      <td><%= link_to 'Edit', edit_appointment_path(appointment)%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

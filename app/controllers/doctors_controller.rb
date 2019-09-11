@@ -1,10 +1,11 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:edit, :update, :destroy]
+  before_action :set_doctor, only: [:edit, :update, :destroy, :show]
   def index
     @doctors = Doctor.all.order('id ASC')
   end
 
   def show
+    @appointments = Appointment.where(doctor_id: @doctor)
   end
 
   def new
