@@ -1,2 +1,4 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+<h4><%= @patient.name %>'s Appointments</h4>
+<% @appointments.each do |appointment| %>
+  <p><%= appointment.comment %></p>
+<% end %>

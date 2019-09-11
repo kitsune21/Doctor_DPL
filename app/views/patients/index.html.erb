@@ -1,19 +1,21 @@
 <h1>Patients</h1>
 
-<%= link_to "New Patient", new_patient_path %>
+<%= link_to "| New Patient |", new_patient_path %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Phone Number</th>
-  </tr>
-  <% @patients.each do |patient| %>
-  <tr>
-    <td><%= link_to patient.name, edit_patient_path(patient) %></td>
-    <td><%= patient.phone %> </td>
-    <td><%= link_to "Delete Patient", [patient], method: :delete %></td>
-  </tr>
-  <% end %>
+<table class='hover'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+    <tr>
+      <td><%= link_to patient.name, patient_path(patient) %></td>
+      <td><%= patient.phone %> </td>
+      <td><%= link_to "Edit Patient", edit_patient_path(patient) %> | <%= link_to "Delete Patient", [patient], method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-
-
