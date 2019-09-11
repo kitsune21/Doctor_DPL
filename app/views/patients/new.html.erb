@@ -3,10 +3,10 @@
 <%= link_to "Cancel", patients_path %>
 
 <%= form_for @patient do |f| %>
-  <%= f.label :name %>: 
+  <%= f.label :name %>
   <%= f.text_field :name, required: true, autofocus: true %>
 
-  <%= f.label :phone %>:
+  <%= f.label :phone %>
   <%= f.text_field :phone%>
 
   <%= f.submit%>

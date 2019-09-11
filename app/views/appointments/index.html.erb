@@ -1,16 +1,18 @@
 <h1>All Appointments</h1>
 
-<%= link_to "New Appointment (Existing Patient)", new_appointment_path%>
-<%= link_to "New Appointment (New Patient)", new_patient_path%>
+<%= link_to "| New Appointment (Existing Patient) |", new_appointment_path%>
+<%= link_to "New Appointment (New Patient) |", new_patient_path%>
 
-<table>
-  <tr>
-    <th>Patient</th>
-    <th>Doctor</th>
-    <th>Speciality</th>
-    <th>Time</th>
-    <th>Comment</th>
-  </tr>
+<table class='hover'>
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Doctor</th>
+      <th>Speciality</th>
+      <th>Time</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
   <% @appointments.each do |appointment| %>
   <tr>
     <td><%= appointment.patient.name %></td>
@@ -19,7 +21,7 @@
     <td><%= appointment.time.strftime("%H:%M") %></td>
     <td><%= appointment.comment %></td>
     <td><%= link_to "Edit", edit_appointment_path(appointment) %></td>
-    <td><%= link_to "Delete", [appointment], method: :delete%></td>
+    <td><%= button_to "Delete", [appointment], method: :delete%></td>
   <tr>
   <% end %>
 </table>

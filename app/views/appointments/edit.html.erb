@@ -1,6 +1,7 @@
 <h1>Appointment For: <%= @appointment.patient.name %></h1>
 
 <%= link_to "Cancel", appointments_path%>
+<%= button_to "Delete Appointment", @appointment, method: :delete %>
 
 <%= form_for @appointment do |f| %>
   <%= f.label :comment %>

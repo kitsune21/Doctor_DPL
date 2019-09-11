@@ -1,6 +1,7 @@
 <h1><%= @doctor.name %></h1>
 
 <%= link_to "Cancel", doctors_path%>
+<%= button_to "Delete Doctor", @doctor, method: :delete %>
 
 <%= form_for @doctor do |f| %>
   <%= f.label :name%>

@@ -15,10 +15,11 @@
   <tbody>
   <% @doctors.each do |doctor| %>
     <tr>
-      <td><%= link_to doctor.name, edit_doctor_path(doctor) %></td>
+      <td><%= link_to doctor.name, doctor_path(doctor) %></td>
       <td><%= doctor.tenure%> years</td>
       <td><%= doctor.speciality.speciality%> </td>
-      <td><%= link_to "Delete Doctor", [doctor], method: :delete %></td>
+      <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
+      <td><%= button_to "Delete Doctor", doctor, method: :delete %></td>
     </tr>
   <% end %>
   </tbody>

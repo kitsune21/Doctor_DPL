@@ -14,7 +14,7 @@
     <tr>
       <td><%= link_to patient.name, patient_path(patient) %></td>
       <td><%= patient.phone %> </td>
-      <td><%= link_to "Edit Patient", edit_patient_path(patient) %> | <%= link_to "Delete Patient", [patient], method: :delete %></td>
+      <td><%= link_to "Edit Patient", edit_patient_path(patient) %> | <%= button_to "Delete Patient", [patient], method: :delete %></td>
     </tr>
     <% end %>
   </tbody>

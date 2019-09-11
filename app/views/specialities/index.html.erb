@@ -3,13 +3,18 @@
 <%= link_to "Add Speciality", new_speciality_path %>
 <%= link_to "Back to Doctors", doctors_path %>
 
-<table>
+<table class='hover'>
+  <thead>
   <tr>
     <th>Speciality</th>
   </tr>
-  <% @specialities.each do |speciality| %>
-  <tr>
-    <td><%= link_to speciality.speciality, edit_speciality_path(speciality) %></td>
-  </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @specialities.each do |speciality| %>
+    <tr>
+      <td><%= link_to speciality.speciality, edit_speciality_path(speciality) %></td>
+      <td><%= button_to "Delete Speciality", speciality, method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>

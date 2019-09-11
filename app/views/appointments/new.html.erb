@@ -3,6 +3,7 @@
 <%= link_to "Cancel", appointments_path%>
 
 <%= form_for @appointment do |f| %>
+  <%= f.label :patient %>
   <%= f.collection_select :patient_id, Patient.all.order('id DESC'), :id, :name%>
 
   <%= f.label :comment %>
